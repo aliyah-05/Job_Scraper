@@ -1,0 +1,40 @@
+name: hourly-olj-sweep
+
+# Scheduling is driven by the job-scraper-trigger Cloudflare Worker (reliable
+# cron) calling workflow_dispatch — GitHub's built-in schedule event is
+# best-effort and drops runs at peak times.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: job-scraper-sweeps
+  cancel-in-progress: false
+  queue: max
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Write Telegram config from secrets
+        run: echo "{\"token\":\"${{ secrets.TELEGRAM_TOKEN }}\",\"chatId\":\"${{ secrets.TELEGRAM_CHAT_ID }}\"}" > telegram.json
+
+      - name: Sweep OnlineJobs.PH (part-time only)
+        run: node src/cli.mjs --source onlinejobsph --all
+
+      - name: Commit dedup state back
+        run: node scripts/sync-seen.mjs
