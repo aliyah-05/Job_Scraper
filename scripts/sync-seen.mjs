@@ -10,7 +10,7 @@
  *
  * This script merges seen.json SEMANTICALLY (keys = union, updatedAt = newest),
  * so the merge is well-defined and lossless no matter how many runs raced, then
- * re-parents onto the latest origin/main (git reset --soft) so the push is
+ * re-parents onto the latest origin/master (git reset --soft) so the push is
  * always fast-forward, retrying for the last-writer window.
  *
  * Usage (from repo root): node scripts/sync-seen.mjs
@@ -56,7 +56,7 @@ function readLocal() {
 }
 
 function readRemote() {
-  const text = tryGit(['show', 'origin/main:data/seen.json']);
+  const text = tryGit(['show', 'origin/master:data/seen.json']);
   return parseState(text);
 }
 
@@ -76,18 +76,18 @@ git(['config', 'user.name', 'job-scraper bot']);
 git(['config', 'user.email', 'actions@github.com']);
 
 for (let attempt = 1; attempt <= MAX_PUSH_ATTEMPTS; attempt++) {
-  tryGit(['fetch', 'origin', 'main']);
+  tryGit(['fetch', 'origin', 'master']);
   const merged = mergeStates(readLocal(), readRemote());
   writeState(merged);
 
   // Stage ONLY our state file, then re-parent onto the latest remote tip.
   git(['add', 'data/seen.json']);
-  tryGit(['reset', '--soft', 'origin/main']);
+  tryGit(['reset', '--soft', 'origin/master']);
   tryGit(['commit', '-m', 'chore: update seen.json', '--no-verify']);
 
   try {
-    git(['push', 'origin', 'HEAD:main']);
-    console.log('seen.json synced to origin/main');
+    git(['push', 'origin', 'HEAD:master']);
+    console.log('seen.json synced to origin/master');
     process.exit(0);
   } catch {
     if (attempt === MAX_PUSH_ATTEMPTS) {
