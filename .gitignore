@@ -10,3 +10,7 @@ data/master-profile.md
 
 # Telegram bot token + chat id — a secret, never commit it.
 telegram.json
+
+# Console logs from manual runs — local noise, not source.
+output.txt
+result.txt

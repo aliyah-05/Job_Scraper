@@ -1,3 +1,7 @@
 @echo off
-cd /d "C:\Users\L4T\Documents\Job_Applications\job-scraper\job-scraper-main"
-"C:\Program Files\nodejs\node.exe" "C:\Users\admin\Desktop\Deepseek Projects\job-scraper\src\cli.mjs" --source onlinejobsph --all
+REM OnlineJobs.PH only — the fast, high-yield sweep.
+REM Path-independent: %~dp0 is this script's own folder, so the repo can live anywhere.
+cd /d "%~dp0"
+set "NODE=C:\Program Files\nodejs\node.exe"
+if not exist "%NODE%" set "NODE=node"
+"%NODE%" "%~dp0src\cli.mjs" --source onlinejobsph --all

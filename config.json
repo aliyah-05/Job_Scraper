@@ -1,95 +1,88 @@
 {
   "_comment": "Everything you control lives here. The code knows nothing about specific roles — edit this file, not src/.",
-
   "searches": [
     {
       "label": "qa-titles",
       "enabled": true,
       "keywords": [
-        "QA Tester", "Quality Assurance Tester", "Software QA Tester", "Software Tester",
-        "Manual QA Tester", "Manual Tester", "QA Analyst", "Quality Assurance Analyst",
-        "QA Engineer", "Software QA Engineer", "Quality Engineer", "Test Engineer",
-        "Software Test Engineer", "QA Specialist", "Quality Assurance Specialist",
-        "QA Associate", "QA Assistant", "Junior QA Tester", "Junior QA Engineer",
-        "Entry-Level QA Tester", "Mobile App Tester", "Mobile QA Tester",
-        "Web Application Tester", "Website Tester", "Application Tester",
-        "Product Tester", "Game Tester", "Beta Tester"
+        "QA Tester",
+        "QA Analyst",
+        "QA Engineer",
+        "Quality Assurance",
+        "Software Tester",
+        "Manual Tester",
+        "Test Engineer",
+        "Website Tester",
+        "Mobile App Tester",
+        "Beta Tester"
       ]
     },
     {
-      "label": "qa-testing-types",
+      "label": "qa-support-va",
       "enabled": true,
       "keywords": [
-        "Functional Testing", "Regression Testing", "Smoke Testing", "Sanity Testing",
-        "Exploratory Testing", "User Acceptance Testing", "UAT", "End-to-End Testing",
-        "Integration Testing", "System Testing", "Compatibility Testing",
-        "Cross-Browser Testing", "Cross-Platform Testing", "Usability Testing",
-        "Accessibility Testing", "Performance Testing", "API Testing"
+        "QA Virtual Assistant",
+        "Technical Virtual Assistant",
+        "Product Support Assistant",
+        "Bug Reporting",
+        "UAT"
       ]
     },
     {
-      "label": "qa-skills",
+      "label": "va-core",
       "enabled": true,
       "keywords": [
-        "Bug Reporting", "Bug Tracking", "Defect Management", "Defect Reporting",
-        "Issue Tracking", "Test Case Creation", "Test Case Execution", "Test Planning",
-        "Test Documentation", "Test Scenarios", "Test Scripts", "Reproduction Steps",
-        "Root Cause Analysis", "Acceptance Criteria"
+        "Virtual Assistant",
+        "Executive Assistant",
+        "Administrative Assistant",
+        "Data Entry"
       ]
     },
     {
-      "label": "qa-tools",
+      "label": "support-messaging",
       "enabled": true,
       "keywords": [
-        "Jira", "Trello", "Asana", "ClickUp", "Linear", "TestRail", "Zephyr", "Qase",
-        "Postman", "Swagger", "OpenAPI", "BrowserStack", "LambdaTest", "Chrome DevTools",
-        "Android Testing", "iOS Testing", "Web Testing", "Mobile Testing"
+        "Customer Support",
+        "Chat Support",
+        "Email Support",
+        "Inbox Management",
+        "Appointment Setter",
+        "Lead Generation"
       ]
     },
     {
-      "label": "qa-combos",
+      "label": "social-content",
       "enabled": true,
       "keywords": [
-        "entry level", "freelance", "saas", "startup", "manual testing", "remote qa"
-      ]
-    },
-    {
-      "label": "va-qa",
-      "enabled": true,
-      "keywords": [
-        "QA Virtual Assistant", "Software QA Assistant", "QA Tester Remote",
-        "Website Tester", "UAT Assistant", "Software Testing Assistant",
-        "Bug Reporting Specialist", "QA Support Assistant", "Technical Virtual Assistant",
-        "Product Support Assistant", "SaaS Virtual Assistant", "UI/UX Testing Assistant",
-        "Technical Project Assistant", "CRM Data Management"
-      ]
-    },
-    {
-      "label": "va-data-ai",
-      "enabled": true,
-      "keywords": [
-        "AI Virtual Assistant", "AI Data Annotator", "AI Training Assistant",
-        "Prompt Assistant", "AI Content Reviewer", "Automation VA", "No-Code Automation",
-        "Chatbot Support Assistant", "Data Entry VA", "Data Management VA", "Data Analyst VA"
-      ]
-    },
-    {
-      "label": "email-messaging-chat",
-      "enabled": true,
-      "keywords": [
-        "Email Support", "Email Management", "Email Assistant", "Email Virtual Assistant", "Inbox Management", "Inbox Assistant", "Email Handling", "Email Correspondence", "Client Communication", "Customer Communication", "Customer Support", "Email Customer Support", "Chat Support", "Live Chat Support", "Chat Agent", "Customer Service Representative", "Messaging Assistant", "Communication Assistant", "Online Chat Support", "Customer Engagement", "Client Relations Assistant", "Community Support", "Social Media Messaging", "Social Media DM Management", "DM Manager", "Facebook Messenger Support", "Instagram DM Management", "LinkedIn Messaging", "Lead Follow-Up", "Client Follow-Up", "Appointment Setting", "Appointment Setter", "Email Outreach", "Cold Email Outreach", "Lead Generation", "Lead Qualification", "CRM Management", "Customer Success Assistant", "Email Management VA", "Chat Support Remote", "Email and Chat Support", "Inbox Management Virtual Assistant", "Social Media DM Manager", "Customer Support VA", "Remote Messaging Assistant", "Client Communication Assistant", "Email Outreach VA", "Appointment Setting VA", "Non-Voice Customer Support", "Chat and Email Representative", "Entry-Level VA", "Part-Time Virtual Assistant", "Online Assistant", "Social Media Posting", "Content Posting", "Social Media Assistant", "Content Upload", "Content Publisher", "Post Scheduler", "Social Media Coordinator", "Content Coordinator", "Facebook Page Manager", "Instagram Manager", "TikTok Manager", "LinkedIn Content Manager", "Pinterest Manager", "Content Management", "Content Uploading", "Post Creation", "Content Scheduling", "Social Media Scheduler", "Community Posting"
+        "Social Media Assistant",
+        "Social Media Manager",
+        "Content Coordinator",
+        "Community Manager"
       ]
     }
   ],
-
   "filters": {
     "remoteOnly": true,
     "employmentTypes": [],
-    "excludeKeywords": ["therapist", "therapy", "mental health", "counselor", "counselling", "psychologist", "clinical", "nurse", "nursing", "healthcare", "medical", "hospital", "pharmacy", "patient"],
+    "excludeKeywords": [
+      "therapist",
+      "therapy",
+      "mental health",
+      "counselor",
+      "counselling",
+      "psychologist",
+      "clinical",
+      "nurse",
+      "nursing",
+      "healthcare",
+      "medical",
+      "hospital",
+      "pharmacy",
+      "patient"
+    ],
     "minSalary": null,
     "postedWithinDays": 30
   },
-
   "sources": {
     "remoteok": true,
     "remotive": true,
@@ -104,19 +97,16 @@
     "remoterocketship": false,
     "jobspresso": true
   },
-
   "notify": {
     "enabled": true,
     "jobsPerMessage": 8
   },
-
   "limits": {
     "perSource": 50,
     "fetchDescriptions": true,
     "maxDetailFetches": 40,
     "requestDelayMs": 300
   },
-
   "_hints": {
     "searches": "Add as many as you like. `keywords` drive both remote-feed filtering and the search box on query sources.",
     "employmentTypes": "Empty array = any. Put e.g. [\"internship\"] or [\"ojt\"] to narrow. Matched loosely against each posting's type/title.",
